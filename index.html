@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="galeriaapp" ng-controller="galctl as ctl">
+  <head>
+    <title>{{ctl.titulo}}</title>
+    <script type="text/javascript" src="bundle.js"></script>
+    <style>
+      .gal {
+        column-count: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Galeria APP</h1>
+    <button ngf-select="ctl.carrega($file)">Nova imagem</button>
+    <div class="gal">
+      <div ng-repeat="im in ctl.imagens">
+        <p>{{im.nomeimagem}}</p>
+        <img  ng-src="http://127.0.0.1:3000/{{im.idimagem}}" 
+              alt="im.nomeimagem"/>
+      </div>
+    </div>
+  </body>
+</html>
